@@ -1,0 +1,91 @@
+.adt {
+    float: left;
+    padding-left: 20px;
+    }
+.adt-comment {
+    float: right;
+    padding-right: 20px;
+}
+.info-for-unauthorized {
+    padding-top: 10px;
+    color: #5a5353;
+    font-size: 17px;
+
+}
+
+.errorInfo {
+    font-size: 17px;
+    color: red;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+.submit {
+    background-color: #f5a46d;
+    color: #5a5353;
+    padding: 13px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    opacity: 0.9;
+    letter-spacing: 1.3px;
+    border-radius: 10px;
+}
+.submit:hover {
+    opacity: 1;
+}
+.entry-title {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.below-title-meta {
+    padding-bottom: 20px;
+    background-color: #f0f0f1;
+    font-size: 14px;
+    color: #757575;
+    line-height: 1.4;
+}
+.comments-title {
+    color: #e58a5a;
+    font-weight: bold;
+}
+.header-one-comment {
+    background-color: #f0f0f1;
+    line-height: 1.4;
+
+}
+.data_comment {
+    float: right;
+    font-size: xx-small;
+    line-height: 2;
+
+}
+.text-comment {
+    padding-top: 10px;
+    background-color: #fff3e4;
+    font-size: 17px;
+
+}
+
+.name-comment {
+    color: #e58a5a;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+.hr-comments {
+    background-color:#ededed;
+    color: #ededed;
+    height:1px;
+    border: none;
+}
+.create-comment {
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+.post-1 {
+
+    margin-bottom: 120px;
+}

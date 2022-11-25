@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+
+.site {
+    padding: 0 15px 0 15px;
+    background: #fff;
+}
+/*html,div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    border: 0;
+    vertical-align: baseline;
+    padding-inline-start: 0;
+}*/
+
+.site-header {
+    width: 100%;
+    border-top: 10px solid #ffffff;
+    height: auto;
+    margin-bottom: 24px;
+
+}
+#wrapper {
+    margin:0 auto;
+
+}
+.body {
+    width:1300px;
+    margin:0px auto;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.site-header {
+    padding-bottom: 18px;
+}
+/*article, aside, details, figcaption, figure, footer, header, nav, section {
+    display: block;
+}*/
+.themonic-nav {
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+.themonic-nav ul.nav-menu, .themonic-nav div.nav-menu>ul {
+    background: none repeat scroll 0 0 #F3F3F3;
+    border-bottom: 5px solid #16A1E7;
+    border-top: 1px solid #ededed;
+    display: inline-block!important;
+    text-align: left;
+    width: 100%;
+}
+.themonic-nav ul {
+    margin: 0;
+    text-indent: 0;
+}
+.themonic-nav li {
+    position: relative;
+}
+.themonic-nav li a, .themonic-nav li {
+    display: inline-block;
+    text-decoration: none;
+}
+.themonic-nav li {
+    font-size: 20px;
+    line-height: 1.42857143;
+    width: auto;
+    transition: .3s ease 0s;
+}
+ol, ul {
+    list-style: none;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.responsive {
+    width: 100%;
+    height: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+}
+.entry-header .entry-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.entry-header .entry-title {
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+a {
+    outline: none;
+    color: #e58a5a;
+    text-decoration: none;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu-main-profile {
+    list-style: none;
+    margin: 40px 0 5px;
+
+    text-align: center;
+    background: white;
+}
+.menu-main-profile li {display: inline-block;}
+.menu-main-profile li:after {
+    content: "|";
+    color: #606060;
+    display: inline-block;
+    vertical-align:top;
+}
+.menu-main-profile li:last-child:after {content: none;}
+.menu-main-profile a {
+    text-decoration: none;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 34px 0 30px;
+    font-size: 17px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: color .2s;
+}
+.menu-main-profile a, .menu-main-profile a:visited {color: #9d999d;}
+.menu-main-profile a.current, .menu-main-profile a:hover{color: #feb386;}
+.menu-main-profile a:before,
+.menu-main-profile a:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    left: 50%;
+    background: #feb386;
+    transition: .8s;
+}
+.menu-main-profile-username a :after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    left: 50%;
+    background: #e58a5a;
+    transition: .8s;
+}
+.menu-main-profile a:hover:before, .menu-main-profile .current:before {left: 0;}
+.menu-main-profile a:hover:after, .menu-main-profile .current:after {right: 0;}
+.menu-main {
+    list-style: none;
+    margin: 40px 0 5px;
+    padding: 25px 0;
+    text-align: center;
+    background: white;
+}
+
+.menu-main li {display: inline-block;}
+.menu-main li:after {
+    content: "|";
+    color: #606060;
+    display: inline-block;
+    vertical-align:top;
+}
+.menu-main li:last-child:after {content: none;}
+.menu-main a {
+    text-decoration: none;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 34px 0 30px;
+    font-size: 17px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: color .2s;
+}
+.menu-main a, .menu-main a:visited {color: #9d999d;}
+.menu-main a.current, .menu-main a:hover{color: #feb386;}
+.menu-main a:before,
+.menu-main a:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    left: 50%;
+    background: #feb386;
+    transition: .8s;
+}
+.menu-main-username a :after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    left: 50%;
+    background: #e58a5a;
+    transition: .8s;
+}
+.menu-main a:hover:before, .menu-main .current:before {left: 0;}
+.menu-main a:hover:after, .menu-main .current:after {right: 0;}
+@media (max-width: 550px) {
+    .menu-main {padding-top: 0;}
+    .menu-main li {display: block;}
+    .menu-main li:after {content: none;}
+    .menu-main a {
+        padding: 25px 0 20px;
+        margin: 0 30px;
+    }
+}
+.head-logo {
+    margin: 15px 0 20px;
+    position: relative;
+}
+.archive-meta {
+    color: #757575;
+    line-height: 2;
+    margin-top: 22px;
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+}
+.archive-header {
+    margin-top: 0px!important;
+}
+#archive_header {
+    padding-bottom: 20px;
+}
+.archive-header, .page-header {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ededed;
+}
+.text-banner {
+    text-align: center;
+}
+/*.widget-area {
+    flex: 30%; !* Set the width of the sidebar *!
+    background-color: #f1f1f1; !* Grey background color *!
+    padding: 20px; !* Some padding *!
+}
+.site-content {
+    flex: 70%; !* Set the width of the main content *!
+    background-color: white; !* White background color *!
+    padding: 20px; !* Some padding *!
+}*/
+.site-content article {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    margin-bottom: 25px;
+}
+.site-content {
+    /*border-right: 1px solid #F1F1F1;*/
+    float: left;
+    margin: 0 10px;
+    padding: 20px 20px 0 10px;
+    width: calc(100% - 380px);
+    background: #f9f9f9;
+}
+#actual_category {
+    background-color: #ffa576;
+}
+#whitespace_in_middle {
+    padding-top: 20px;
+}
+.post {
+    padding-top: 10px;
+
+}
+#secondary {
+    height: auto !important;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.entry-content, .entry-summary, .mu_register {
+    text-align: justify;
+    line-height: 1.714285714;
+}
+.alignleft {
+    float: left; /* Выравнивание по левому краю */
+    margin: 7px 7px 7px 0; /* Отступы вокруг картинки */
+ }
+div.excerpt-thumb a img {
+    width: 25%;
+}
+img.size-full, img.size-large, img.header-image, img.wp-post-image {
+    max-width: 100%;
+    height: auto;
+}
+img[AttributesStyle] {
+    width: 213px;
+    aspect-ratio: auto 213 / 160;
+    height: 160px;
+}
+/*вертикальное меню*/
+  .category-wrap {
+      padding: 15px;
+      background: #f2f2f2;
+     /* width: 200px;*/
+      box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+      font-family: 'Montserrat', sans-serif;
+      height: 300px;
+  }
+.category-wrap h3 {
+    font-size: 20px;
+    color: rgba(0,0,0,.6);
+    margin: 0 0 10px;
+    padding: 0 5px;
+    position: relative;
+}
+.category-wrap h3:after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #ffb27d;
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+    box-shadow: -8px -8px #ffb27d, 0 -8px #ffb27d, -8px 0 #ffb27d;
+}
+.category-wrap ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(0,0,0,.3);
+}
+.category-wrap li {margin: 12px 0 0 0px;}
+.category-wrap a {
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    color: rgba(0,0,0,.6);
+    padding: 5px;
+    position: relative;
+    transition: .3s linear;
+}
+.text-article {
+    text-decoration: none;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 34px 0 30px;
+    font-size: 17px;
+    text-transform: inherit;
+    display: block;
+    transition: color .2s;
+    font-family: 'Montserrat', sans-serif;
+}
+.category-wrap a:after {
+    content:"\f18e";
+    font-family: FontAwesome;
+    position: absolute;
+    right: 5px;
+    color: white;
+    transition: .2s linear;
+}
+.category-wrap a:hover {
+    background: #bdc0c9;
+    color: white;
+}
+
+.widget-area {
+        float: right;
+        margin: 24px 0;
+        padding: 0 20px 0 0;
+        width: 300px;
+    }
+
+.widget-area {
+    margin-top: 10px;
+    padding-top: 70px;
+
+}
+@media screen and (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+.footer {
+    position: relative;
+    /* Some padding */
+    padding: 20px 20px 0px;
+    text-align: center; /* Center text*/
+    /*background: #ddd; !* Grey background *!*/
+}
+.img-footer {
+    width: 20%;
+    position: absolute;
+}
+
+
+
+
+.image-first:hover {
+    opacity:0.00;
+}
+
+
