@@ -1,5 +1,5 @@
 <?php
-include '../functionsDB/dbFunctions.php';
+
 
 //получить список комментариев по id страницы
  function getCommentsByIdPage(int $idPage) {

@@ -1,0 +1,37 @@
+.header-adm-index {
+    resize: vertical;
+    padding: 15px;
+    border-bottom-color: #4f94d1;
+    border-top-color: coral;
+    border-left-color: #f56a384d;
+    border-left-width: 10px;
+    border-style: solid none solid solid;
+}
+.main-index {
+    margin-top: 25px;
+
+}
+a {
+    flex: 1;
+    text-decoration: none;
+    outline: none;
+    text-align: center;
+    line-height: 2;
+    color: black;
+    background-color: rgba(255, 0, 0, 0);
+    padding: 3% 79% 3% 0px;
+}
+a:link,
+a:visited,
+a:focus {
+
+
+}
+
+a:hover {
+
+}
+
+a:active {
+
+}

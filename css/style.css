@@ -4,7 +4,7 @@
     padding: 0 15px 0 15px;
     background: #fff;
 }
-/*html,div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+/*pages,div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     border: 0;
     vertical-align: baseline;
@@ -272,7 +272,7 @@ h2 {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 .site-content {
     /*border-right: 1px solid #F1F1F1;*/
@@ -380,6 +380,7 @@ img[AttributesStyle] {
     color: white;
     transition: .2s linear;
 }
+
 .category-wrap a:hover {
     background: #bdc0c9;
     color: white;
@@ -429,4 +430,22 @@ img[AttributesStyle] {
     opacity:0.00;
 }
 
+.comment {
+    float: right;
+    padding-right: 20px;
 
+}
+.comment-adt {
+    background-color: #f0f0f1;
+    font-size: 16px;
+    color: #757575;
+    line-height: 1.6;
+    height: 25px;
+    width: -webkit-fill-available;
+}
+.link-post {
+    float: right;
+    padding-right: 6px;
+    font-weight: 600;
+
+}

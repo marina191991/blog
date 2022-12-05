@@ -1,5 +1,5 @@
-session_start();
 <?php
+session_start();
 include '../functionsDB/dbFunctions.php';
 include 'check.php';
 
@@ -24,39 +24,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //проверка на наличие юзера в бд
             $nameArr = selectWhereFieldEqual("users", 0, $name);
             $emailArr = selectWhereFieldEqual("users", 1, $email);
+            $role=3;
             if (empty($nameArr) && empty($emailArr)) {
-                $data = [$name, $email, $password, $token];
+                $data = [$name, $email, $password, $token,$role];
                 insert("users", $id, $data);
                 session_start();
                 $_SESSION['user_id'] = $id;
                 $_SESSION['user_name'] =$name;
-                header("Location: ../html/index.php");
+                header("Location: ../index.php");
             } else {
                 if (!empty($nameArr)) {
                     $_SESSION['message'] = 'the name is using other user';
-                    header("Location: ../html/registration.php");
+                    header("Location: ../pages/registration.php");
                 }
                 if (!empty($emailArr)) {
                     $_SESSION['message'] = 'the email is using other user';
-                    header("Location: ../html/registration.php");
+                    header("Location: ../pages/registration.php");
                 }
             }
         } else {
             if (!validEmail($email)) {
                 $_SESSION['message'] = 'Please enter valid the email.';
-                header("Location: ../html/registration.php");
+                header("Location: ../pages/registration.php");
             }
             if (!checkPass($password, $passwordR)) {
                 $_SESSION['message'] = 'Passwords do not match';
-                header("Location: ../html/registration.php");
+                header("Location: ../pages/registration.php");
             }
             if (!checkLength($name, 4, 10)) {
                 $_SESSION['message'] = 'Field name must be min 4 chars and no max 10 chars';
-                header("Location: ../html/registration.php");
+                header("Location: ../pages/registration.php");
             }
             if (!checkLength($password, 6, 12)) {
                 $_SESSION['message'] = 'Field password must be min 6 chars and max 12 chars';
-                header("Location: ../html/registration.php");
+                header("Location: ../pages/registration.php");
             }
         }
 
@@ -64,16 +65,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         if (empty($email)) {
             $_SESSION['message'] = 'Please enter the email.';
-            header("Location: ../html/registration.php");
+            header("Location: ../pages/registration.php");
         }
         if (empty($name)) {
             $_SESSION['message'] = 'Please enter the name.';
-            header("Location: ../html/registration.php");
+            header("Location: ../pages/registration.php");
 
         }
         if (empty($password)) {
             $_SESSION['message'] = 'Please enter the password.';
-            header("Location: ../html/registration.php");
+            header("Location: ../pages/registration.php");
 
         }
     }

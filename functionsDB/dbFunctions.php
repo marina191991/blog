@@ -23,7 +23,7 @@ function deleteById($space, $id): void
     }
     unlink($filePath);
 }
-
+/**получить все файлы, где полЯ равны значению*/
 function selectWhereFieldsEqual(string $space, $field1, $value1, $field2, $value2): ?array
 {
     $arrResult = [];
@@ -35,6 +35,7 @@ function selectWhereFieldsEqual(string $space, $field1, $value1, $field2, $value
     return $arrResult;
 }
 
+/**получить все файлы, где поле равно значению*/
 function selectWhereFieldEqual(string $space, $field, $value): ?array
 {
     $arrResult = [];
@@ -70,6 +71,7 @@ function getMaxIdForSpace(string $space): int
 
 }
 
+//получить id по полю
 function getIdByField(string $space, int $field, string $value): ?int
 {
     $arrResult = [];
@@ -88,32 +90,34 @@ function getIdByField(string $space, int $field, string $value): ?int
         if ($fileIn[$field] == $value) {
             return $idArr[$k];
         }
-        $k ++;
+        $k++;
     }
     return null;
 }
 
 //получить по id значение поля
-function getValueById(string $space,int $id,int $key): ?string
+function getValueById(string $space, int $id, int $key): ?string
 {
     $arrResult = [];
-    $filePath = _getPathFile($space,$id);
+    $filePath = _getPathFile($space, $id);
     $arrResult[] = json_decode(file_get_contents($filePath), true);
     $outArray = call_user_func_array('array_merge', $arrResult);
     return $outArray[$key];
 
 }
-//изменить или добавить по id значение в указанноv поле
-function insertValueById (string $space,int $id,string $value,int $key): void
+
+//изменить или добавить по id значение в указанном поле
+function insertValueById(string $space, int $id, string $value, int $key): void
 {
     $filePath = _getPathFile($space, $id);
     $arrResult[] = json_decode(file_get_contents($filePath), true);
-        $outArray = call_user_func_array('array_merge', $arrResult);
-        $outArray[$key]=$value;
+    $outArray = call_user_func_array('array_merge', $arrResult);
+    $outArray[$key] = $value;
     echo print_r($outArray);
-    $content=json_encode($outArray);
+    $content = json_encode($outArray);
     file_put_contents($filePath, $content);
 }
+
 function setId(string $space): int
 {
     if (getMaxIdForSpace($space) > 0) {
@@ -121,17 +125,36 @@ function setId(string $space): int
     }
     return 1;
 }
+/**сортировка по ключу в массивах*/
+function sortFilesInSpaceById (string $space) {
+    $arrayAllPosts = getAll($space);
+    //сортировка по ключу в массивах
+    $id  = array_column($arrayAllPosts, 0);
+    array_multisort ($id,SORT_ASC,$arrayAllPosts);
+    return $arrayAllPosts;
+}
 
 function _getPathSpace(string $space): string
 {
-   $pathSpace = "../storage/" . $space;
+
     //for dedugging test.php
     //$pathSpace = "storage/" . $space;
 
-    if (!file_exists($pathSpace)) {
-        mkdir($pathSpace, 0777, true);
+    if (!file_exists("../storage/test")) {
+        $pathSpace = "storage/" . $space;
+        if (!file_exists($pathSpace)) {
+            mkdir($pathSpace, 0777, true);
+        }
     }
-    return $pathSpace;
+    else   {
+        $pathSpace = "../storage/" . $space; {
+            if (!file_exists($pathSpace)) {
+                mkdir($pathSpace, 0777, true);
+            }
+        }
+    }
+
+return $pathSpace;
 }
 
 function _getPathFile(string $space, int $id): string
