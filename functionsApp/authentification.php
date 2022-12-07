@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (!empty($userCheckExist)) {
                 /** Здесь определяем у пользователя роль и по значению роли запускаем сессию*/
                 $id = getIdByField("users", 1, $email);
-                $userName=getValueById("users",$id,0);
-                $role=getValueById("users",$id,4);
+                $userName = getValueById("users", $id, 0);
+                $role = getValueById("users", $id, 4);
                 switch ($role) {
                     case 1:
                         $_SESSION['admin_id'] = $id;
@@ -34,19 +34,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $_SESSION['user_id'] = $id;
                         $_SESSION['user_name'] = $userName;
                         break;
-                                  }
+                }
 
-               /**check checkbox 'Remember me' and add cookie*/
+                /**check checkbox 'Remember me' and add cookie*/
                 if (!empty($_REQUEST['remember']) && $_REQUEST['remember'] == 1) {
                     $token = getValueById("users", $id, 3);
-                    setcookie('token', $token, time() + 60 * 60 * 24,"/"); //действует во всех каталогах сайта за счет "/"
-                   /** Чтобы установленная кука сразу появилась в массиве $_COOKIE*/
+                    setcookie('token', $token, time() + 60 * 60 * 24, "/"); //действует во всех каталогах сайта за счет "/"
+                    /** Чтобы установленная кука сразу появилась в массиве $_COOKIE*/
                     $_COOKIE['token'] = $token;
                 }
 
                 header("Location: ../index.php");
             } else {
-                //случай, когда емэйл есть в базе, но он не совпадает с паролем
+                //случай, когда email есть в базе, но он не совпадает с паролем
                 if (!empty($emailArr)) {
                     $_SESSION['message'] = 'there is no user with this email';
                     header('Location: ..pages/pages/auth.php');

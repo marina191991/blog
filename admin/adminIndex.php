@@ -22,13 +22,13 @@ session_start();
 </div>
 <div class="main-index" id='main'>
     <div class="header-adm-index " style="margin-bottom: 3%;">
-     <a href="createPost.php" >  Создание поста</a>
+        <a href="createPost.php"> Создание поста</a>
     </div>
     <div class="header-adm-index " style="margin-bottom: 3%;">
         <a href="updatePost.php" style="padding: 3% 68% 3% 0px;">Редактирование поста</a>
     </div>
     <div class="header-adm-index ">
-        <a href="#" > Удаление </a>
+        <a href="#"> Удаление </a>
     </div>
 
 </div>

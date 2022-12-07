@@ -34,7 +34,7 @@ function cutTextPost(string $string, int $countChars): string
  * Функция типа void
  * @getNewPosts
  */
-function getNewPostsFromAllCategories(string $space, int $countPosts,string $text): void
+function getNewPostsFromAllCategories(string $space, int $countPosts, string $text): void
 {
     /** $arrayAllPosts сортировка по ключу в массивах*/
     $arrayAllPosts = sortFilesInSpaceById($space);
@@ -56,26 +56,27 @@ function getNewPostsFromAllCategories(string $space, int $countPosts,string $tex
  * Функция типа void
  * @getNewPostsFromCategory
  */
-function getNewPostsFromCategory(string $space, string $category,string $text): ?bool
+function getNewPostsFromCategory(string $space, string $category, string $text): ?bool
 {
     /**
      * $arrayAllPostsByCategories получает массив постов с указанной категорией.
      * Где field1 5 - ключ в массиве со значением категории
      * Где field2 6 - ключ в массиве со значением опубликовано/не опубликовано
      */
-    $arrayAllPostsByCategories = selectWhereFieldsEqual($space, 5, $category,6,1);
+    $arrayAllPostsByCategories = selectWhereFieldsEqual($space, 5, $category, 6, 1);
 
     //$arrayLast = array_slice($arrayAllPostsByCategories, -$countPosts);
     /**
      * $arrayRev - получает массив постов в реверсивном варианте
      */
     $arrayRev = array_reverse($arrayAllPostsByCategories);
-   if (!empty($arrayRev)) {
-       foreach ($arrayRev as $item) {
-      echo sprintf($text, $item[0], $item[0], $item[2], $item[2], $item[3], $item[3], $item[3], $item[3], cutTextPost($item[4], 1574),
-            getCountComments($item[0]), $item[5], $item[5], $item[0]);
-    } return true;}
-   else return false;
+    if (!empty($arrayRev)) {
+        foreach ($arrayRev as $item) {
+            echo sprintf($text, $item[0], $item[0], $item[2], $item[2], $item[3], $item[3], $item[3], $item[3], cutTextPost($item[4], 1574),
+                getCountComments($item[0]), $item[5], $item[5], $item[0]);
+        }
+        return true;
+    } else return false;
 
 }
 

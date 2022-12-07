@@ -11,7 +11,7 @@ if (empty($_SESSION['user_id']) && empty($_SESSION['admin_id']) && empty($_SESSI
         if (!empty($queryResult)) {
             $id = getIdByField("users", 3, $key);
             $role = getValueById("users", $id, 4);
-            $userName=getValueById("users",$id,0);
+            $userName = getValueById("users", $id, 0);
             switch ($role) {
                 case 1:
                     $_SESSION['admin_id'] = $id;

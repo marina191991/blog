@@ -2,7 +2,7 @@
 session_start();
 include_once '../functionsDB/dbFunctions.php';
 include_once '../functionsApp/commentOut.php';
-include_once '../functionsApp/postFunctions.php'?>
+include_once '../functionsApp/postFunctions.php' ?>
 <?php include_once 'docTypeHTML.php' ?>
 <?php include_once 'headPartForPostPage.php' ?>
 <body class="body">
@@ -10,7 +10,7 @@ include_once '../functionsApp/postFunctions.php'?>
     <img alt="Cat's blogggg....." src="/images/header.jpg" class="responsive">
 </div>
 <div class="main" id="main">
-<?php include_once 'topMenu.php'; ?>
+    <?php include_once 'topMenu.php'; ?>
     <div id="primary" class="site-content" style="padding-top: 50px">
         <div id="content">
             <header id="archive_header" class="archive-header">
@@ -21,14 +21,14 @@ include_once '../functionsApp/postFunctions.php'?>
                 </div>
             </header>
             <?php
-            $text=file_get_contents('postPartForGetShortPost.php');
-            if (!(getNewPostsFromCategory("posts","Flies",$text))) {
+            $text = file_get_contents('postPartForGetShortPost.php');
+            if (!(getNewPostsFromCategory("posts", "Flies", $text))) {
                 echo '<div   style="display: flex;" >
  <img src="/images/142109670_SAD_CAT_400.gif" ><p>Пока нет постов :(</p></div> ';
             } ?>
         </div>
     </div>
-<?php include_once 'secondaryPart.php' ?>
+    <?php include_once 'secondaryPart.php' ?>
 </div>
 <!--footer-->
 <?php include_once 'footer.php' ?>

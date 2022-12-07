@@ -5,12 +5,12 @@ include_once '../functionsApp/postFunctions.php';
 //["tatyana","martiniz@gmail.com","zxzxzxz","e92c70ea5c90d141000079a0ba276b84"]
 
 
-$min=0;
+$min = 0;
 
 $arrayComments = getAll("posts");
 
-    $id  = array_column($arrayComments, 0);
-       array_multisort ($id,SORT_ASC,$arrayComments);
+$id = array_column($arrayComments, 0);
+array_multisort($id, SORT_ASC, $arrayComments);
 
 //$sort=natcasesort($arrayComments);
 //$sort = usort($arrayComments,natcasesort);
@@ -21,17 +21,17 @@ echo print_r($arrayComments);
 echo "\n";
 //echo print_r($arrayComments)."\n";
 //foreach ($arrayComments as $item) {
-    //cutTextPost($item[4],500);
-    //вывести на главную страницу для короткого поста 1572 символа
-   // echo strlen($item[4])> 1600;//условие для создания поста. Минимальное количество букв
-    /*$string=$item[4];
-    $string = strip_tags($string);
-    $string = substr($string, 0, 1000);
-    $string = rtrim($string, "!,.-");
-    $string = substr($string, 0, strrpos($string, ' '));
-    echo $string."… ";*/
-    //$textResult=mb_strimwidth($text, 0, 1572, "...");
-   // echo $string;
+//cutTextPost($item[4],500);
+//вывести на главную страницу для короткого поста 1572 символа
+// echo strlen($item[4])> 1600;//условие для создания поста. Минимальное количество букв
+/*$string=$item[4];
+$string = strip_tags($string);
+$string = substr($string, 0, 1000);
+$string = rtrim($string, "!,.-");
+$string = substr($string, 0, strrpos($string, ' '));
+echo $string."… ";*/
+//$textResult=mb_strimwidth($text, 0, 1572, "...");
+// echo $string;
 
 /*    echo "<br><br>";
 }*/

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once '../functionsApp/authByCookies.php';
-include_once '../functionsDB/dbFunctions.php';?>
+include_once '../functionsDB/dbFunctions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

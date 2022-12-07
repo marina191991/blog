@@ -11,19 +11,26 @@ function checkLength($value, $min, $max): bool
 {
     return (strlen($value) >= $min && strlen($value) <= $max);
 }
-function checkPass($password,$passwordR): bool {
+
+function checkPass($password, $passwordR): bool
+{
     return ($password === $passwordR);
 
 }
-function checkLengthValues($password,$name): bool {
+
+function checkLengthValues($password, $name): bool
+{
 
     return (checkLength($name, 4, 10) && checkLength($password, 6, 12));
 }
-function validEmail($email): bool {
+
+function validEmail($email): bool
+{
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
-function checkTypeImageFile(array $fileImage): bool {
+function checkTypeImageFile(array $fileImage): bool
+{
     // разбиваем имя файла по точке и получаем массив
     $getMime = explode('.', $fileImage['name']);
     // нас интересует последний элемент массива - расширение
@@ -31,13 +38,14 @@ function checkTypeImageFile(array $fileImage): bool {
     // объявим массив допустимых расширений
     $types = ['jpg', 'png', 'gif', 'bmp', 'jpeg'];
     // если расширение не входит в список допустимых - return
-    if(in_array($mime, $types)) {
+    if (in_array($mime, $types)) {
         return true;
     }
     return false;
 }
 
-function checkErrorUploadImage($errorCode): ?string {
+function checkErrorUploadImage($errorCode): ?string
+{
     $size = 3500000;
     $mb = $size / 1e+6;
     $errorMessages = [
@@ -51,7 +59,7 @@ function checkErrorUploadImage($errorCode): ?string {
     ];
     if (!isset($errorMessages[$errorCode])) {
         return null;
-           }
+    }
     return $errorMessages[$errorCode];
 
 }

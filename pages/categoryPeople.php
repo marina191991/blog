@@ -2,7 +2,7 @@
 session_start();
 include_once '../functionsDB/dbFunctions.php';
 include_once '../functionsApp/commentOut.php';
-include_once '../functionsApp/postFunctions.php'?>
+include_once '../functionsApp/postFunctions.php' ?>
 <?php include_once 'docTypeHTML.php' ?>
 <?php include_once 'headPartForPostPage.php' ?>
 <body class="body">
@@ -22,8 +22,8 @@ include_once '../functionsApp/postFunctions.php'?>
             </header>
             <?php
 
-            $text=file_get_contents('postPartForGetShortPost.php');
-            if (!(getNewPostsFromCategory("posts","People",$text))) {
+            $text = file_get_contents('postPartForGetShortPost.php');
+            if (!(getNewPostsFromCategory("posts", "People", $text))) {
                 echo '<div   style="display: flex;" >
  <img src="/images/142109670_SAD_CAT_400.gif" ><p>Пока нет постов :(</p></div> ';
             }; ?>

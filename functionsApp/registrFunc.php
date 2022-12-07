@@ -4,7 +4,6 @@ include '../functionsDB/dbFunctions.php';
 include 'check.php';
 
 
-
 //Получаем данные от элементов формы
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = clean($_POST['username']);
@@ -19,18 +18,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($name) && !empty($email) && !empty($password) && !empty($passwordR)) {
 
         if (checkPass($password, $passwordR) && checkLengthValues($password, $name) && validEmail($email)) {
-            $password=md5(clean($_POST['psw']));
+            $password = md5(clean($_POST['psw']));
             $passwordR = md5(clean($_POST['pswR']));
             //проверка на наличие юзера в бд
             $nameArr = selectWhereFieldEqual("users", 0, $name);
             $emailArr = selectWhereFieldEqual("users", 1, $email);
-            $role=3;
+            $role = 3;
             if (empty($nameArr) && empty($emailArr)) {
-                $data = [$name, $email, $password, $token,$role];
+                $data = [$name, $email, $password, $token, $role];
                 insert("users", $id, $data);
                 session_start();
                 $_SESSION['user_id'] = $id;
-                $_SESSION['user_name'] =$name;
+                $_SESSION['user_name'] = $name;
                 header("Location: ../index.php");
             } else {
                 if (!empty($nameArr)) {

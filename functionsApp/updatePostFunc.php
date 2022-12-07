@@ -15,14 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($title) && !empty($categoryNumber) && empty($date)) {
             $arrayResultTitleCategory = [];
             /**Поиск текстового названия категории. так как в БД поста категория имеет полное название, а не число*/
-           $category = getValueById("category", $categoryNumber, 1);
+            $category = getValueById("category", $categoryNumber, 1);
             $arrayResultTitleCategory = selectWhereFieldsEqual("posts", 2, $title, 5, $category);
             if (!empty($arrayResultTitleCategory)) {
                 $id = $arrayResultTitleCategory[0][0];
                 $text = $arrayResultTitleCategory[0][4];
                 $date = $arrayResultTitleCategory[0][1];
-                $public=$arrayResultTitleCategory[0][6];
-                $category = getValueById("category",$categoryNumber, 1);
+                $public = $arrayResultTitleCategory[0][6];
+                $category = getValueById("category", $categoryNumber, 1);
                 $_SESSION['id'] = $id;
                 //$_SESSION['category'] = $category;
                 $_SESSION['title'] = $title;
@@ -41,12 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($title) && !empty($date) && empty($category)) {
             $arrayResultTitleDate = [];
             $arrayResultTitleDate = selectWhereFieldsEqual("posts", 2, $title, 1, $date);
-/**Если найдет пост*/
+            /**Если найдет пост*/
             if (!empty($arrayResultTitleDate)) {
                 $id = $arrayResultTitleDate[0][0];
                 $text = $arrayResultTitleDate[0][4];
                 $date = $arrayResultTitleDate[0][1];
-             // $category = getValueById("category", $categoryNumber, 1);
+                // $category = getValueById("category", $categoryNumber, 1);
                 $_SESSION['id'] = $id;
                 //$_SESSION['category'] = $category;
                 $_SESSION['title'] = $title;

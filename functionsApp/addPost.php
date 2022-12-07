@@ -13,21 +13,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     /** Если запрос пришел от страницы createPost admin */
     if (isset($_POST['submit_save']) || isset($_POST['submit_save_and_push'])) {
         $id = setId("posts");
-         }
+    }
     if (isset($_POST['submit_save'])) {
         $public = 0;
     }
     if (isset($_POST['submit_save_and_push'])) {
         $public = 1;
     }
-    if(isset($_POST['submit_update_and_push'])) {
-        $id =$_POST['id'];
+    if (isset($_POST['submit_update_and_push'])) {
+        $id = $_POST['id'];
         $public = 1;
     }
     /** Если отправлена форма для обновления update post*/
-    if (isset($_POST['submit_update']) ) {
-        $id =$_POST['id'];
-        $public=$_POST['public'];
+    if (isset($_POST['submit_update'])) {
+        $id = $_POST['id'];
+        $public = $_POST['public'];
     }
     $errorCode = $_FILES['image']['error'];
     //проверка на количество символов в тексте
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //готовим массив для загрузки в БД в категорию 'posts'
         $category = getValueById("category", $category, 1);
         $data = [];
-        $data = [$id, $date, $title, $nameImage, $text, $category,$public];
+        $data = [$id, $date, $title, $nameImage, $text, $category, $public];
         //загружаем в БД
         insert("posts", $id, $data);
         header("Location: " . $_SERVER["HTTP_REFERER"]);
@@ -46,45 +46,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             publicPost($id);
         }
 
-}
-
-/**Обработка ошибок*/
-if (!isset($_FILES) || $errorCode != UPLOAD_ERR_OK) {
-    $checkErrorUpload = checkErrorUploadImage($errorCode);
-    if (!empty($checkErrorUpload)) {
-        $_SESSION['message'] = $checkErrorUpload;
-    } else {
-        $checkTypeImage = checkTypeImageFile($_FILES['image']);
-        if ($checkTypeImage) {
-            $_SESSION['message'] = 'Недопустимый тип файла.';
-        }
     }
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
 
-if (!$checkSizeText) {
-    $_SESSION['message'] = "Введите минимум 2000 символов";
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
+    /**Обработка ошибок*/
+    if (!isset($_FILES) || $errorCode != UPLOAD_ERR_OK) {
+        $checkErrorUpload = checkErrorUploadImage($errorCode);
+        if (!empty($checkErrorUpload)) {
+            $_SESSION['message'] = $checkErrorUpload;
+        } else {
+            $checkTypeImage = checkTypeImageFile($_FILES['image']);
+            if ($checkTypeImage) {
+                $_SESSION['message'] = 'Недопустимый тип файла.';
+            }
+        }
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
 
-if (empty($title)) {
-    $_SESSION['message'] = 'заполните название поста';
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
+    if (!$checkSizeText) {
+        $_SESSION['message'] = "Введите минимум 2000 символов";
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
 
-if (empty($category)) {
-    $_SESSION['message'] = 'выберите категорию';
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
-if (empty($text)) {
-    $_SESSION['message'] = 'Введите текст';
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
+    if (empty($title)) {
+        $_SESSION['message'] = 'заполните название поста';
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
 
-if (empty($date)) {
-    $_SESSION['message'] = 'Установите дату';
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
+    if (empty($category)) {
+        $_SESSION['message'] = 'выберите категорию';
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
+    if (empty($text)) {
+        $_SESSION['message'] = 'Введите текст';
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
+
+    if (empty($date)) {
+        $_SESSION['message'] = 'Установите дату';
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
 }
 
 /**Загрузка файла в БД*/

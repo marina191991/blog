@@ -15,14 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $arrayValues = [$name, $page_id, $text_comment, $date];
         $id = setId("comments");
         insert("comments", $id, $arrayValues);// Добавляем комментарий в таблицу
-    }
-    elseif (empty($text_comment)) {
+    } elseif (empty($text_comment)) {
         $_SESSION['message'] = 'Введите,пожалуйста,комментарий';
         header("Location: " . $_SERVER["HTTP_REFERER"]);
     }
-
-
-
 
 
     header("Location: " . $_SERVER["HTTP_REFERER"]);// Делаем реридект обратно

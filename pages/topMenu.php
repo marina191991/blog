@@ -9,13 +9,25 @@
             <li><a href="/index.php" <?php if ($url == "/index.php") echo 'class="current"' ?>>Главная</a></li>
             <?php if (!empty($_SESSION['user_id']) || !empty($_SESSION['admin_id']) || !empty($_SESSION['moderator_id'])): ?>
                 <li><a href="/functionsApp/logOut.php">Выйти</a></li>
-              <?php endif; ?>
+            <?php endif; ?>
         </ul>
         <ul class="menu-main-profile">
-            <li style="float: right"><a style="color: #ee631e; padding-bottom: 1px;" href="/admin/adminIndex.php">
+            <li style="float: right"><a style="color: #ee631e; padding-bottom: 1px;" <?php
+                if (isset($_SESSION['user_name'])) {
+                    echo 'href = "#"';
+                }
+                if (isset($_SESSION['admin_name'])) {
+                    echo 'href="/admin/adminIndex.php"';
+                }
+                if (isset($_SESSION['moderator_name'])) {
+                    echo 'href = "#"';
+                }
+
+                ?> >
                     <?php
                     if (isset($_SESSION['user_name'])) {
                         echo $_SESSION['user_name'];
+
                     }
                     if (isset($_SESSION['admin_name'])) {
                         echo $_SESSION['admin_name'];
@@ -24,6 +36,7 @@
                         echo $_SESSION['moderator_name'];
                     }
                     ?>
+
 
                 </a></li>
         </ul>

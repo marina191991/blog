@@ -14,12 +14,12 @@ $id = 1;
     <?php include_once 'topMenu.php'; ?>
     <div id="primary" class="site-content" style="padding-top: 50px">
         <div id="content">
-            <?php include_once 'primaryHeaderPart.php'?>
+            <?php include_once 'primaryHeaderPart.php' ?>
             <!--вставить пост-->
             <?php include_once 'postPart.php'; ?>
         </div>
         <!--комментарии-->
-        <?php include_once 'commentsPart.php'?>
+        <?php include_once 'commentsPart.php' ?>
     </div>
 
     <?php include_once 'secondaryPart.php' ?>

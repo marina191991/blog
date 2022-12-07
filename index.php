@@ -6,7 +6,7 @@ include_once 'functionsApp/postFunctions.php';
 include_once 'functionsDB/dbFunctions.php';
 ?>
 
-<?php include_once 'pages/docTypeHTML.php'?>
+<?php include_once 'pages/docTypeHTML.php' ?>
 <head>
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet">
@@ -33,8 +33,8 @@ include_once 'functionsDB/dbFunctions.php';
             <!--posts-->
             <!--Здесь выводятся посты по фильтру поздних дат. То есть последние три созданных поста.-->
             <?php
-            $text=file_get_contents('pages/postPartForGetShortPost.php');
-            getNewPostsFromAllCategories("posts", 3,$text);
+            $text = file_get_contents('pages/postPartForGetShortPost.php');
+            getNewPostsFromAllCategories("posts", 3, $text);
             ?>
         </div>
     </div>

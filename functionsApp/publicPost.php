@@ -1,5 +1,6 @@
 <?php
-function publicPost(int $id) {
+function publicPost(int $id)
+{
 // Указываем то что нужно записать в файл
     $text = sprintf(' <?php session_start();
 include_once \'../functionsDB/dbFunctions.php\';
@@ -30,8 +31,8 @@ include_once \'../functionsApp/commentOut.php\';
 <!--footer-->
 <?php include_once \'footer.php\' ?>
 </body>
-</html>',$id);
+</html>', $id);
 
-    file_put_contents("../pages/post$id.php",$text);
+    file_put_contents("../pages/post$id.php", $text);
 
 }
